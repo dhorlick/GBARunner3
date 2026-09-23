@@ -137,6 +137,11 @@ static void updateArm7IdleState()
     checkMcuIrq();
     sGbaSaveIpcService.Update();
 
+    u16 extKeys = REG_KEYXY;
+
+    // write to ARM9 shared memory where -- hopefully -- nothing else important has been stored :)
+    *(volatile u16*)0x027FFC00 = extKeys;
+
     if (sState == Arm7State::ExitRequested)
     {
         snd_setMasterVolume(0); // mute sound
