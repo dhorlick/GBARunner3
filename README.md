@@ -1,10 +1,12 @@
 # GBARunner3, Y2B edition
 
-GBARunner3 variant that maps Y button presses to B button inputs, to better reflect the GBA's gamepad layout
-
 https://github.com/dhorlick/GBARunner3
 
-It also has the ability to load "hicode" games (inherited from https://github.com/Gericom/GBARunner3/tree/feature/cache-hicode branch), like Super Mario Advance 4 Super Mario Bros. 3 with Bonus e-Reader Levels.
+GBARunner3 variant that maps Y button presses to B button inputs, to better reflect the GBA's gamepad layout
+
+That may not work with some Rhythm Games that get X and Y input via interrupts.
+
+This GBARunner3 version also has the ability to load "hicode" games (inherited from https://github.com/Gericom/GBARunner3/tree/feature/cache-hicode branch), like Super Mario Advance 4 Super Mario Bros. 3 with Bonus e-Reader Levels.
 
 # Getting the .NDS File
 
@@ -12,13 +14,12 @@ If you prefer not to build it yourself, you can get one from the [latest release
 
 # Building instructions
 
-These instructions were written for a Linux system that uses aptitude for package management.
+These instructions were written for a Linux system.
 
-Install podman. We won't be using Docker, but folks have done a lot of work in Docker to get the exact right
-version of [devkitPro](https://github.com/devkitpro) that GBARunner3 needs to build. So we'll want podman, in
-order to exploit that, without Docker.
+Install podman, so we can get the correct older versions of the [devkitPro tools](https://github.com/devkitpro) that GBARunner3 needs to build.
 
-`sudo apt install podman`
+Aptitude: `sudo apt install podman`
+Pacman: `sudo pacman -S podman`
 
 Extract what we need from the 2023 Docker image to /opt/devkitpro…
 
